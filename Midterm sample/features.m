@@ -18,7 +18,7 @@ next_state.x = robot.x+VW.v*cos(robot.t)*dt;
 next_state.y = robot.y+VW.v*sin(robot.t)*dt;
 
 f1 = 1;
-f2 = norm([goal.x-next_state.x, goal.y-next_state.y]);
+f2 = norm([goal.x-next_state.x, goal.y-next_state.y])/100;
 f3 = robot.t - atan((goal.x-next_state.x)/(goal.y-next_state.y));
 if min(laser) < 70
     f4 = f3;
